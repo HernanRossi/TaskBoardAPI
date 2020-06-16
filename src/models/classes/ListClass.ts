@@ -13,4 +13,13 @@ export class List implements ListInterface {
     this.title = props.title
     this.listIndex = props.listIndex
   }
+
+  toJSON() {
+    return {
+      listId: this.listId, 
+      boardId: this.boardId,
+      title: this.title,
+      listIndex: this.listIndex
+    }
+  }
 }

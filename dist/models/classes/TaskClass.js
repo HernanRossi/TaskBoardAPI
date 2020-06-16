@@ -14,6 +14,7 @@ class Task {
         this.priority = props.priority || 4;
         this.state = 'Created';
         this.created = props.created || new Date();
+        this.updated = props.updated || new Date();
     }
     toJson() {
         return {
@@ -26,6 +27,7 @@ class Task {
             priority: this.priority,
             state: this.state,
             created: this.created,
+            updated: this.updated,
         };
     }
 }

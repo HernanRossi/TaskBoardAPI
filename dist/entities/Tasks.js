@@ -32,11 +32,6 @@ __decorate([
     type_graphql_1.Field(),
     typegoose_1.prop(),
     __metadata("design:type", String)
-], Tasks.prototype, "typeLetter", void 0);
-__decorate([
-    type_graphql_1.Field(),
-    typegoose_1.prop(),
-    __metadata("design:type", String)
 ], Tasks.prototype, "description", void 0);
 __decorate([
     type_graphql_1.Field(),
@@ -57,12 +52,7 @@ __decorate([
     type_graphql_1.Field(),
     typegoose_1.prop(),
     __metadata("design:type", Date)
-], Tasks.prototype, "update", void 0);
-__decorate([
-    type_graphql_1.Field(),
-    typegoose_1.prop(),
-    __metadata("design:type", String)
-], Tasks.prototype, "assignee", void 0);
+], Tasks.prototype, "updated", void 0);
 __decorate([
     type_graphql_1.Field(),
     typegoose_1.prop(),

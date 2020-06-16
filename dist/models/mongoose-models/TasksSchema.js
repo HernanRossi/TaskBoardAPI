@@ -12,7 +12,6 @@ const TaskSchema = new mongoose_1.Schema({
         required: true
     },
     type: String,
-    typeLetter: String,
     description: String,
     state: String,
     priority: Number,

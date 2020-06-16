@@ -13,15 +13,22 @@
   "main": "index.js",
   "dependencies": {
     "@typegoose/typegoose": "^7.2.0",
+    "@types/lodash": "^4.14.155",
     "@types/mongoose": "^5.7.24",
+    "@types/nanoid": "^2.1.0",
+    "@types/winston": "^2.4.4",
     "apollo-server-express": "^2.14.4",
     "class-validator": "^0.12.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "graphql": "^15.1.0",
+    "lodah": "^0.0.1-security",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.19",
+    "nanoid": "^3.1.10",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^1.0.0-rc.2"
+    "type-graphql": "^1.0.0-rc.2",
+    "winston": "^3.2.1"
   },
   "scripts": {
     "docker-deploy": "docker-compose up",

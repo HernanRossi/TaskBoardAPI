@@ -1,9 +1,9 @@
 import { InputType, Field } from "type-graphql"
 import { Length } from "class-validator"
-import { Tasks } from "../../entities/Tasks"
+import { Task } from "../../entities/Task"
 
 @InputType()
-export class TasksInput implements Partial<Tasks> {
+export class TasksInput implements Partial<Task> {
   @Field()
   listId: string
   

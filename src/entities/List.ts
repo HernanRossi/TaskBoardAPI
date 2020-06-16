@@ -1,9 +1,9 @@
-import { ObjectType, Field, ID } from "type-graphql"
+import { ObjectType, Field } from "type-graphql"
 import { prop as Property, getModelForClass } from "@typegoose/typegoose"
 
-@ObjectType({ description: "The Lists model" })
-export class Lists {
-  @Field(() => ID)
+@ObjectType({ description: "The List model" })
+export class List {
+  @Field()
   listId: String
 
   @Field()
@@ -19,4 +19,4 @@ export class Lists {
   listIndex: Number
 }
 
-export const ListsModel = getModelForClass(Lists)
+export const ListsModel = getModelForClass(List)

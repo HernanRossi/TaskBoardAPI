@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ListsInput = void 0;
 const type_graphql_1 = require("type-graphql");
 const class_validator_1 = require("class-validator");
-const mongodb_1 = require("mongodb");
 let ListsInput = class ListsInput {
 };
 __decorate([
@@ -21,25 +20,17 @@ __decorate([
 ], ListsInput.prototype, "listId", void 0);
 __decorate([
     type_graphql_1.Field(),
+    __metadata("design:type", String)
+], ListsInput.prototype, "boardId", void 0);
+__decorate([
+    type_graphql_1.Field(),
+    __metadata("design:type", Number)
+], ListsInput.prototype, "listIndex", void 0);
+__decorate([
+    type_graphql_1.Field(),
     class_validator_1.Length(1, 255),
     __metadata("design:type", String)
-], ListsInput.prototype, "description", void 0);
-__decorate([
-    type_graphql_1.Field(),
-    __metadata("design:type", String)
-], ListsInput.prototype, "color", void 0);
-__decorate([
-    type_graphql_1.Field(),
-    __metadata("design:type", Number)
-], ListsInput.prototype, "stock", void 0);
-__decorate([
-    type_graphql_1.Field(),
-    __metadata("design:type", Number)
-], ListsInput.prototype, "price", void 0);
-__decorate([
-    type_graphql_1.Field(() => String),
-    __metadata("design:type", mongodb_1.ObjectId)
-], ListsInput.prototype, "category_id", void 0);
+], ListsInput.prototype, "title", void 0);
 ListsInput = __decorate([
     type_graphql_1.InputType()
 ], ListsInput);

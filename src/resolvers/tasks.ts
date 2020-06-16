@@ -1,22 +1,22 @@
 import { Resolver, Mutation, Arg, Query } from "type-graphql";
-import { Tasks, TasksModel } from "../entities/Tasks";
+import { Task, TasksModel } from "../entities/Task";
 import { TasksInput } from "./types/tasks-input"
 
 @Resolver()
 export class TasksResolver {
 
-  @Query(_returns => Tasks, { nullable: false })
+  @Query(_returns => Task, { nullable: false })
   async returnSingleTask(@Arg("id") id: string) {
     return await TasksModel.findById({ _id: id });
   };
 
-  @Query(() => [Tasks])
+  @Query(() => [Task])
   async returnAllTasksByList(@Arg("id") id: string) {
     return await TasksModel.find({listId: id});
   };
 
-  @Mutation(() => Tasks)
-  async createTask(@Arg("data") { taskId, listId, type, description, state, priority, created, updated, title }: TasksInput): Promise<Tasks> {
+  @Mutation(() => Task)
+  async createTask(@Arg("data") { taskId, listId, type, description, state, priority, created, updated, title }: TasksInput): Promise<Task> {
     const list = (await TasksModel.create({
       taskId, listId, type, description, state, priority, created, updated, title
     })).save();

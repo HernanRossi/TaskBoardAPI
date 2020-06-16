@@ -22,12 +22,17 @@ __decorate([
     type_graphql_1.Field(),
     typegoose_1.prop(),
     __metadata("design:type", String)
+], Lists.prototype, "boardId", void 0);
+__decorate([
+    type_graphql_1.Field(),
+    typegoose_1.prop(),
+    __metadata("design:type", String)
 ], Lists.prototype, "title", void 0);
 __decorate([
     type_graphql_1.Field(),
     typegoose_1.prop(),
-    __metadata("design:type", Array)
-], Lists.prototype, "tasks", void 0);
+    __metadata("design:type", Number)
+], Lists.prototype, "listIndex", void 0);
 Lists = __decorate([
     type_graphql_1.ObjectType({ description: "The Lists model" })
 ], Lists);

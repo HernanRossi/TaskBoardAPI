@@ -1,10 +1,15 @@
-import { ObjectType, Field, ID } from "type-graphql"
+import { ObjectType, Field } from "type-graphql"
 import { prop as Property, getModelForClass } from "@typegoose/typegoose"
 
-@ObjectType({ description: "The Boards model" })
-export class Boards {
-  @Field(() => ID)
+@ObjectType({ description: "The Board model" })
+export class Board {
+  @Field()
+  @Property()
   userId: string
+
+  @Field()
+  @Property()
+  _id: String
 
   @Field()
   @Property()
@@ -15,4 +20,4 @@ export class Boards {
   title: String
 }
 
-export const BoardModel = getModelForClass(Boards)
+export const BoardModel = getModelForClass(Board)

@@ -1,9 +1,9 @@
-import { ObjectType, Field, ID } from "type-graphql";
+import { ObjectType, Field } from "type-graphql";
 import { prop as Property, getModelForClass } from "@typegoose/typegoose";
 
-@ObjectType({ description: "The Tasks model" })
-export class Tasks {
-    @Field(()=> ID)
+@ObjectType({ description: "The Task model" })
+export class Task {
+    @Field()
     taskId: string
 
     @Field() 
@@ -39,4 +39,4 @@ export class Tasks {
     title: String
 }
 
-export const TasksModel = getModelForClass(Tasks);
+export const TasksModel = getModelForClass(Task);

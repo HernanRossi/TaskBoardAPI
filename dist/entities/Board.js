@@ -9,33 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BoardModel = exports.Boards = void 0;
+exports.BoardModel = exports.Board = void 0;
 const type_graphql_1 = require("type-graphql");
 const typegoose_1 = require("@typegoose/typegoose");
-let Boards = class Boards {
+let Board = class Board {
 };
 __decorate([
-    type_graphql_1.Field(() => type_graphql_1.ID),
+    type_graphql_1.Field(),
+    typegoose_1.prop(),
     __metadata("design:type", String)
-], Boards.prototype, "userId", void 0);
+], Board.prototype, "userId", void 0);
 __decorate([
     type_graphql_1.Field(),
     typegoose_1.prop(),
     __metadata("design:type", String)
-], Boards.prototype, "boardId", void 0);
+], Board.prototype, "boardId", void 0);
 __decorate([
     type_graphql_1.Field(),
     typegoose_1.prop(),
     __metadata("design:type", String)
-], Boards.prototype, "title", void 0);
-__decorate([
-    type_graphql_1.Field(),
-    typegoose_1.prop(),
-    __metadata("design:type", Array)
-], Boards.prototype, "lists", void 0);
-Boards = __decorate([
-    type_graphql_1.ObjectType({ description: "The Boards model" })
-], Boards);
-exports.Boards = Boards;
-exports.BoardModel = typegoose_1.getModelForClass(Boards);
+], Board.prototype, "title", void 0);
+Board = __decorate([
+    type_graphql_1.ObjectType({ description: "The Board model" })
+], Board);
+exports.Board = Board;
+exports.BoardModel = typegoose_1.getModelForClass(Board);
 //# sourceMappingURL=Board.js.map

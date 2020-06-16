@@ -11,4 +11,12 @@ export class Board implements BoardInterface {
     this.boardId = props.boardId
     this.title = props.title || 'Default Task Board'
   }
+
+  toJSON() {
+    return {
+      userId: this.userId,
+      boardId: this.boardId,
+      title: this.title
+    }
+  }
 }

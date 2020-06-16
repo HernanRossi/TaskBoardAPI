@@ -12,10 +12,6 @@ const BoardSchema = new mongoose_1.Schema({
         required: true
     },
     title: String,
-    lists: {
-        type: Array,
-        required: true
-    },
 });
 exports.UserModel = mongoose_1.model('boards', BoardSchema);
 //# sourceMappingURL=BoardSchema.js.map

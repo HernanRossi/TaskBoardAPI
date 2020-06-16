@@ -7,13 +7,12 @@ const ListSchema = new mongoose_1.Schema({
         type: String,
         required: true
     },
-    listIndex: Number,
-    title: {
-        type: String,
+    listIndex: {
+        type: Number,
         required: true
     },
-    tasks: {
-        type: Array,
+    title: {
+        type: String,
         required: true
     },
 });
