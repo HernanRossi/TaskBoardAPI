@@ -1,0 +1,36 @@
+{
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/graphql": "^14.5.0",
+    "@types/mongodb": "^3.5.20",
+    "@types/node": "^14.0.13",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "name": "taskboardapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@typegoose/typegoose": "^7.2.0",
+    "@types/mongoose": "^5.7.24",
+    "apollo-server-express": "^2.14.4",
+    "class-validator": "^0.12.2",
+    "express": "^4.17.1",
+    "graphql": "^15.1.0",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.19",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.0.0-rc.2"
+  },
+  "scripts": {
+    "docker-deploy": "docker-compose up",
+    "start": "set NODE_ENV=production&& node -r dotenv/config ./dist/server.js",
+    "start-dev": "set NODE_ENV=development&& node -r dotenv/config ./dist/server.js",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
