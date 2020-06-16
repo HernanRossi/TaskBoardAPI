@@ -16,9 +16,9 @@ export class ListsResolver {
   }
 
   @Mutation(() => List)
-  async createList(@Arg("data") { listId, listIndex, title, boardId }: ListsInput): Promise<List> {
+  async createList(@Arg("data") { listId, listIndex, title, boardId, sessionId }: ListsInput): Promise<List> {
     const list = (await ListsModel.create({
-      listId, listIndex, title, boardId
+      listId, listIndex, title, boardId, sessionId
     })).save()
     return list
   }

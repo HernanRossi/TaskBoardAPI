@@ -17,6 +17,10 @@ let ListsInput = class ListsInput {
 __decorate([
     type_graphql_1.Field(),
     __metadata("design:type", String)
+], ListsInput.prototype, "sessionId", void 0);
+__decorate([
+    type_graphql_1.Field(),
+    __metadata("design:type", String)
 ], ListsInput.prototype, "listId", void 0);
 __decorate([
     type_graphql_1.Field(),

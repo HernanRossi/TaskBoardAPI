@@ -5,6 +5,9 @@ import { Task } from "../../entities/Task"
 @InputType()
 export class TasksInput implements Partial<Task> {
   @Field()
+  sessionId: string
+  
+  @Field()
   listId: string
   
   @Field()

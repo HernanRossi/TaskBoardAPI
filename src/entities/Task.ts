@@ -4,7 +4,12 @@ import { prop as Property, getModelForClass } from "@typegoose/typegoose";
 @ObjectType({ description: "The Task model" })
 export class Task {
     @Field()
-    taskId: string
+    @Property()
+    sessionId: String
+
+    @Field()
+    @Property()
+    taskId: String
 
     @Field() 
     @Property()
@@ -12,7 +17,7 @@ export class Task {
 
     @Field() 
     @Property()
-    type: String
+    type?: String
 
     @Field() 
     @Property()
@@ -20,11 +25,11 @@ export class Task {
 
     @Field() 
     @Property()
-    state: String
+    state?: String
 
     @Field() 
     @Property()
-    priority: number
+    priority?: Number
 
     @Field() 
     @Property()
@@ -32,7 +37,7 @@ export class Task {
 
     @Field() 
     @Property()
-    updated: Date
+    updated?: Date
 
     @Field() 
     @Property()

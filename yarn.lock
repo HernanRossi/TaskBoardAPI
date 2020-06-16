@@ -286,7 +286,14 @@
     "@types/bson" "*"
     "@types/node" "*"
 
-"@types/mongoose@^5.7.24":
+"@types/mongoose-unique-validator@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@types/mongoose-unique-validator/-/mongoose-unique-validator-1.0.4.tgz#faacc4c6560ff2127d8639220e10958f90aaaa82"
+  integrity sha512-+EKcmhU6VyTLHM9MGORECEW6VNh9C+aKkPQGVdZbKwP65zlL+uRdvCFlKEmootczwgeoJxPj2rlS2PidEQSfbA==
+  dependencies:
+    "@types/mongoose" "*"
+
+"@types/mongoose@*", "@types/mongoose@^5.7.24":
   version "5.7.24"
   resolved "https://registry.yarnpkg.com/@types/mongoose/-/mongoose-5.7.24.tgz#592249435a2e9fee02c9e9650afeac4807d4ef06"
   integrity sha512-clU58TF46ehydILMdeikm9Vi4vFCJRCOd6B5gzhu9SET88oHTU+K+bJHmxIfIBm3QhSOXbAsY22tUU7/EUvexw==
@@ -1614,7 +1621,12 @@ lodah@^0.0.1-security:
   resolved "https://registry.yarnpkg.com/lodah/-/lodah-0.0.1-security.tgz#9b0e5899a58b1574503f96ce1f43423a8cc80d70"
   integrity sha512-vYIu+wOZWe1jM5CnLbg7jsRQfUYg11x0ua+eMr8shDO5AKUjt4tzM/vLe3BXLmG+kJBe56aW+AXEWr8eWMUFnQ==
 
-lodash.get@^4.4.2:
+lodash.foreach@^4.1.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
+  integrity sha1-Gmo16s5AEoDH8G3d7DUWWrJ+PlM=
+
+lodash.get@^4.0.2, lodash.get@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
@@ -1750,6 +1762,14 @@ mongoose-legacy-pluralize@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
   integrity sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
+
+mongoose-unique-validator@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/mongoose-unique-validator/-/mongoose-unique-validator-2.0.3.tgz#247adbcda391bf5bc63fc3dcd43286a9ec833fa4"
+  integrity sha512-3/8pmvAC1acBZS6eWKAWQUiZBlARE1wyWtjga4iQ2wDJeOfRlIKmAvTNHSZXKaAf7RCRUd7wh7as6yWAOrjpQg==
+  dependencies:
+    lodash.foreach "^4.1.0"
+    lodash.get "^4.0.2"
 
 mongoose@^5.9.19:
   version "5.9.19"

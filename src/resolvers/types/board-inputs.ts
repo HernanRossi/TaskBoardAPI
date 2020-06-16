@@ -5,7 +5,7 @@ import { Board } from "../../entities/Board"
 @InputType()
 export class BoardInput implements Partial<Board> {
   @Field()
-  userId: string
+  sessionId: string
   
   @Field()
   boardId: string

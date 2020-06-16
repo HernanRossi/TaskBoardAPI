@@ -5,6 +5,7 @@ class Task {
     constructor(props) {
         if (!props.listId || !props.title)
             throw new Error('Task must have listIndex and title.');
+        this.sessionId = props.sessionId;
         this.listId = props.listId;
         this.taskId = props.taskId;
         this.title = props.title;
@@ -18,6 +19,7 @@ class Task {
     }
     toJson() {
         return {
+            sessionId: this.sessionId,
             listId: this.listId,
             title: this.title,
             taskId: this.taskId,

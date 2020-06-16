@@ -16,9 +16,9 @@ let Board = class Board {
 };
 __decorate([
     type_graphql_1.Field(),
-    typegoose_1.prop(),
+    typegoose_1.prop({ unique: true }),
     __metadata("design:type", String)
-], Board.prototype, "userId", void 0);
+], Board.prototype, "sessionId", void 0);
 __decorate([
     type_graphql_1.Field(),
     typegoose_1.prop(),

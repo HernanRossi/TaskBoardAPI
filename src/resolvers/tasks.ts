@@ -16,9 +16,9 @@ export class TasksResolver {
   };
 
   @Mutation(() => Task)
-  async createTask(@Arg("data") { taskId, listId, type, description, state, priority, created, updated, title }: TasksInput): Promise<Task> {
+  async createTask(@Arg("data") { taskId, listId, type, description, state, priority, created, updated, title, sessionId }: TasksInput): Promise<Task> {
     const list = (await TasksModel.create({
-      taskId, listId, type, description, state, priority, created, updated, title
+      taskId, listId, type, description, state, priority, created, updated, title, sessionId
     })).save();
     return list;
   };

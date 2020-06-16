@@ -5,6 +5,9 @@ import { List } from "../../entities/List"
 @InputType()
 export class ListsInput implements Partial<List> {
   @Field()
+  sessionId: string
+  
+  @Field()
   listId: string
 
   @Field()

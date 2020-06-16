@@ -4,12 +4,8 @@ import { prop as Property, getModelForClass } from "@typegoose/typegoose"
 @ObjectType({ description: "The Board model" })
 export class Board {
   @Field()
-  @Property()
-  userId: string
-
-  @Field()
-  @Property()
-  _id: String
+  @Property({ unique: true })
+  sessionId: String
 
   @Field()
   @Property()

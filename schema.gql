@@ -6,14 +6,14 @@
 """The Board model"""
 type Board {
   boardId: String!
+  sessionId: String!
   title: String!
-  userId: String!
 }
 
 input BoardInput {
   boardId: String!
+  sessionId: String!
   title: String!
-  userId: String!
 }
 
 """
@@ -26,6 +26,7 @@ type List {
   boardId: String!
   listId: String!
   listIndex: Float!
+  sessionId: String!
   title: String!
 }
 
@@ -33,26 +34,42 @@ input ListsInput {
   boardId: String!
   listId: String!
   listIndex: Float!
+  sessionId: String!
   title: String!
 }
 
 type Mutation {
   createBoard(data: BoardInput!): Board!
   createList(data: ListsInput!): List!
+  createSession(sessionId: String!): Session!
   createTask(data: TasksInput!): Task!
-  defaultSession(id: String!): Board!
   deleteBoard(id: String!): Boolean!
   deleteList(id: String!): Boolean!
   deleteTask(id: String!): Boolean!
+  destroySession(sessionId: String!): Boolean!
 }
 
 type Query {
   returnAllBoardsByUser(id: String!): [Board!]!
   returnAllListsByBoard(id: String!): [List!]!
   returnAllTasksByList(id: String!): [Task!]!
-  returnSingleBoard(id: String!): Board!
+  returnSingleBoard(id: SessionInput!): Session!
   returnSingleList(id: String!): List!
   returnSingleTask(id: String!): Task!
+}
+
+"""The Session model"""
+type Session {
+  boards: [Board!]!
+  created: DateTime!
+  lists: [List!]!
+  message: String!
+  sessionId: String!
+  tasks: [Task!]!
+}
+
+input SessionInput {
+  sessionId: String!
 }
 
 """The Task model"""
@@ -61,6 +78,7 @@ type Task {
   description: String!
   listId: String!
   priority: Float!
+  sessionId: String!
   state: String!
   taskId: String!
   title: String!
@@ -76,6 +94,7 @@ input TasksInput {
   listId: String!
   listIndex: Float!
   priority: Float!
+  sessionId: String!
   state: String!
   taskId: String!
   title: String!
