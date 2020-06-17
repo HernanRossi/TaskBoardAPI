@@ -6,13 +6,13 @@ import { BoardModel, Board } from "../entities"
 export class BoardsResolver {
 
   @Query(_returns => Board, { nullable: false })
-  async returnSingleBoard(@Arg("id") id: string) {
-    return await BoardModel.findById({ _id: id })
+  async fetchBoard(@Arg("boardId") boardId: string) {
+    return await BoardModel.findById({ boardId })
   }
 
   @Query(() => [Board])
-  async returnAllBoardsByUser(@Arg("id") id: string) {
-    return await BoardModel.find({ sessionId: id })
+  async featchBoardsBySession(@Arg("sessionId") sessionId: string) {
+    return await BoardModel.find({ sessionId })
   }
 
   @Mutation(() => Board)
@@ -24,8 +24,8 @@ export class BoardsResolver {
   }
 
   @Mutation(() => Boolean)
-  async deleteBoard(@Arg("id") id: string) {
-    await BoardModel.deleteOne({ id })
+  async destroyBoard(@Arg("boardId") boardId: string) {
+    await BoardModel.deleteOne({ boardId })
     return true
   }
 }

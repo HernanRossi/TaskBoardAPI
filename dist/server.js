@@ -17,6 +17,7 @@ const express_1 = __importDefault(require("express"));
 require("reflect-metadata");
 const type_graphql_1 = require("type-graphql");
 const utils_1 = require("./utils");
+const cors_1 = __importDefault(require("cors"));
 const lists_1 = require("./resolvers/lists");
 const tasks_1 = require("./resolvers/tasks");
 const boards_1 = require("./resolvers/boards");
@@ -30,6 +31,7 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     yield utils_1.getMongoConnection();
     const server = new apollo_server_express_1.ApolloServer({ schema });
     const app = express_1.default();
+    app.use(cors_1.default());
     server.applyMiddleware({ app });
     app.listen({ port: 8080 }, () => console.log(`Server ready and listening at port 8080${server.graphqlPath}`));
     utils_1.logger.info({ message: `Server ready and listening at port 8080${server.graphqlPath}` });

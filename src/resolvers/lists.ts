@@ -6,13 +6,13 @@ import { ListsInput } from "./types/lists-input"
 export class ListsResolver {
 
   @Query(_returns => List, { nullable: false })
-  async returnSingleList(@Arg("id") id: string) {
-    return await ListsModel.findById({ _id: id })
+  async fetchList(@Arg("listId") listId: string) {
+    return await ListsModel.findById({ listId })
   }
 
   @Query(() => [List])
-  async returnAllListsByBoard(@Arg("id") id: string) {
-    return await ListsModel.find({boardId: id})
+  async fetchListsByBoard(@Arg("boardId") boardId: string) {
+    return await ListsModel.find({boardId})
   }
 
   @Mutation(() => List)
@@ -24,8 +24,8 @@ export class ListsResolver {
   }
 
   @Mutation(() => Boolean)
-  async deleteList(@Arg("id") id: string) {
-    await ListsModel.deleteOne({ id })
+  async deleteList(@Arg("listId") listId: string) {
+    await ListsModel.deleteOne({ listId })
     return true
   }
 }

@@ -1,18 +1,18 @@
 import { nanoid } from "nanoid"
 import { List, Board, Task } from "src/entities"
 
-const createTask = (title: string, description: string, listId: string, sessionId: string): Task => {
-  return { title, description, taskId: nanoid(), listId, sessionId, created: new Date() }
+const createTask = (title: string, description: string, listId: string, sessionId: string, taskIndex: number): Task => {
+  return { title, description, taskId: nanoid(), listId, sessionId, created: new Date(), taskIndex}
 }
 
 export const defaultTasks = (listIds: string[], sessionId: string) =>  [
-  createTask('Move Task', 'Click on a Task and move it around.', listIds[0], sessionId),
-  createTask('Move List', 'Click on a List and move it around.', listIds[0], sessionId),
-  createTask('About App front-end', 'This app is created using TypeScript, React and the amazing react-dnd library.', listIds[1], sessionId),
-  createTask('Add Task', 'Try adding a new task to a list.', listIds[2], sessionId),
-  createTask('Add List', 'Try adding a new list to the board.', listIds[2], sessionId),
-  createTask('Delete Task', 'Try to delete a task from a list.', listIds[3], sessionId),
-  createTask('Delete List', 'Try to delete a list from the board.', listIds[3], sessionId)
+  createTask('Move Task', 'Click on a Task and move it around.', listIds[0], sessionId, 0),
+  createTask('Move List', 'Click on a List and move it around.', listIds[0], sessionId, 0),
+  createTask('About App front-end', 'This app is created using TypeScript, React and the amazing react-dnd library.', listIds[1], sessionId, 1),
+  createTask('Add Task', 'Try adding a new task to a list.', listIds[2], sessionId, 2),
+  createTask('Add List', 'Try adding a new list to the board.', listIds[2], sessionId, 2),
+  createTask('Delete Task', 'Try to delete a task from a list.', listIds[3], sessionId, 3),
+  createTask('Delete List', 'Try to delete a list from the board.', listIds[3], sessionId, 3)
 ]
 
 export const defaultLists = (listIds: string[], boardId: string, sessionId: string): List[] => {

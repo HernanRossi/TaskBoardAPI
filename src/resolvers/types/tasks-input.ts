@@ -12,36 +12,17 @@ export class TasksInput implements Partial<Task> {
   
   @Field()
   taskId: string
-  
+
   @Field()
-  listIndex: number
-  
-  @Field()
-  priority: number
+  taskIndex: number
 
   @Field()
   @Length(1, 255)
   title: string
-  
-  @Field()
-  @Length(1, 255)
-  assignee: string
-
-  @Field()
-  @Length(1, 255)
-  creator: string
 
   @Field()
   @Length(1, 255)
   description: string
-
-  @Field()
-  @Length(1, 8)
-  type: string
-
-  @Field()
-  @Length(1, 12)
-  state: string
 
   @Field()
   updated: Date

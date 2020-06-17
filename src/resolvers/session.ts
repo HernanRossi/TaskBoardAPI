@@ -8,7 +8,7 @@ import { SessionInput } from "./types/session-input"
 export class SessionResolver {
 
   @Query(_returns => Session, { nullable: false })
-  async returnSingleBoard(@Arg("id") { sessionId }: SessionInput) {
+  async fetchSession(@Arg("sessionId") { sessionId }: SessionInput) {
     const boards = await BoardModel.find({ sessionId })
     const lists = await ListsModel.find({ sessionId })
     const tasks = await TasksModel.find({ sessionId })
@@ -22,7 +22,7 @@ export class SessionResolver {
   }
 
   @Mutation(() => Session)
-  async createSession(@Arg("sessionId") sessionId: string): Promise<any> {
+  async defaultSession(@Arg("sessionId") sessionId: string): Promise<any> {
     const { board, lists, tasks } = defaultBoard(sessionId)
     const newBoard = await BoardModel.create(board)
     const newLists = await ListsModel.insertMany(lists)

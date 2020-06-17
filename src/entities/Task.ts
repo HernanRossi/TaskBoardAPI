@@ -11,25 +11,21 @@ export class Task {
     @Property()
     taskId: String
 
+    @Field()
+    @Property()
+    taskIndex: Number
+
     @Field() 
     @Property()
     listId: String
 
     @Field() 
     @Property()
-    type?: String
+    title: String
 
     @Field() 
     @Property()
     description: String
-
-    @Field() 
-    @Property()
-    state?: String
-
-    @Field() 
-    @Property()
-    priority?: Number
 
     @Field() 
     @Property()
@@ -38,10 +34,6 @@ export class Task {
     @Field() 
     @Property()
     updated?: Date
-
-    @Field() 
-    @Property()
-    title: String
 }
 
 export const TasksModel = getModelForClass(Task);
