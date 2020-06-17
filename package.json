@@ -28,6 +28,7 @@
     "mongoose": "^5.9.19",
     "mongoose-unique-validator": "^2.0.3",
     "nanoid": "^3.1.10",
+    "pm2": "^4.4.0",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^1.0.0-rc.2",
     "winston": "^3.2.1"
@@ -37,7 +38,7 @@
     "start": "set NODE_ENV=production&& node -r dotenv/config ./dist/server.js",
     "start-dev": "set NODE_ENV=development&& node -r dotenv/config ./dist/server.js",
     "build": "tsc",
-    "postinstall": "$(yarn bin)/pm2 install typescript",
+    "postinstall": "node_modules/bin/pm2 install typescript",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
