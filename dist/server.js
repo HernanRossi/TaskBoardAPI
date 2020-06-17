@@ -31,8 +31,8 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     const server = new apollo_server_express_1.ApolloServer({ schema });
     const app = express_1.default();
     server.applyMiddleware({ app });
-    app.listen({ port: 8080 }, () => console.log(`Server ready and listening at ==> http://localhost:8080${server.graphqlPath}`));
-    utils_1.logger.info({ message: `Server ready and listening at ==> http://localhost:8080${server.graphqlPath}` });
+    app.listen({ port: 8080 }, () => console.log(`Server ready and listening at port 8080${server.graphqlPath}`));
+    utils_1.logger.info({ message: `Server ready and listening at port 8080${server.graphqlPath}` });
 });
 main().catch((error) => {
     console.log(error, 'error');
