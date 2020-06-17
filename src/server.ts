@@ -21,8 +21,8 @@ const main = async () => {
   const app = Express()
   server.applyMiddleware({ app })
   app.listen({ port: 8080 }, () =>
-    console.log(`Server ready and listening at ==> http://localhost:8080${server.graphqlPath}`))
-  logger.info({ message: `Server ready and listening at ==> http://localhost:8080${server.graphqlPath}` })
+    console.log(`Server ready and listening at port 8080${server.graphqlPath}`))
+  logger.info({ message: `Server ready and listening at port 8080${server.graphqlPath}` })
 }
 
 main().catch((error) => {
