@@ -47,10 +47,9 @@ export const defaultLists = (listIds: string[], boardId: string, sessionId: stri
 
 export const defaultBoard = (sessionId: string) => {
   const boardId = nanoid()
-  const board: Board = { title: 'Default Board', sessionId, boardId }
   const listIds = [nanoid(), nanoid(), nanoid(), nanoid()]
   const lists: List[] = defaultLists(listIds, boardId, sessionId)
+  const board: Board = { title: 'Default Board', sessionId, boardId }
   const tasks: Task[] = defaultTasks(listIds, sessionId)
-
   return { board, lists, tasks }
 }

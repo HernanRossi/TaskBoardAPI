@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BoardModel = exports.Board = void 0;
 const type_graphql_1 = require("type-graphql");
 const typegoose_1 = require("@typegoose/typegoose");
+const _1 = require(".");
 let Board = class Board {
 };
 __decorate([
@@ -29,6 +30,10 @@ __decorate([
     typegoose_1.prop(),
     __metadata("design:type", String)
 ], Board.prototype, "title", void 0);
+__decorate([
+    type_graphql_1.Field(_ => [_1.List]),
+    __metadata("design:type", Array)
+], Board.prototype, "lists", void 0);
 Board = __decorate([
     type_graphql_1.ObjectType({ description: "The Board model" })
 ], Board);

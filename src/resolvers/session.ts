@@ -3,34 +3,35 @@ import _ from 'lodash'
 import { defaultBoard } from '../data/default/default-board'
 import { TasksModel, ListsModel, BoardModel, Session } from "../entities"
 import { SessionInput } from "./types/session-input"
+import {createSession} from '../utils/createSession'
 
 @Resolver()
 export class SessionResolver {
-
   @Query(_returns => Session, { nullable: false })
   async fetchSession(@Arg("sessionId") { sessionId }: SessionInput) {
-    const boards = await BoardModel.find({ sessionId })
-    const lists = await ListsModel.find({ sessionId })
-    const tasks = await TasksModel.find({ sessionId })
-
+    const board = await BoardModel.findOne({ sessionId })
+    if (!board) return {
+      sessionId,
+      boards: []
+    }
+    const lists = await ListsModel.find({ sessionId }).sort({ listIndex: 1 })
+    const tasks = await TasksModel.find({ sessionId }).sort({ taskIndex: 1 })
+    const response = createSession(sessionId, board, lists, tasks)
     return {
-      boards,
-      lists,
-      tasks,
-      sessionId
+      ...response
     }
   }
 
   @Mutation(() => Session)
   async defaultSession(@Arg("sessionId") sessionId: string): Promise<any> {
     const { board, lists, tasks } = defaultBoard(sessionId)
-    const newBoard = await BoardModel.create(board)
-    const newLists = await ListsModel.insertMany(lists)
-    const newTasks = await TasksModel.insertMany(tasks)
+    await BoardModel.create(board)
+    await ListsModel.insertMany(lists)
+    await TasksModel.insertMany(tasks)
+
+    const response = createSession(sessionId, board, lists, tasks)
     return {
-      boards: [newBoard],
-      lists: newLists,
-      tasks: newTasks
+      ...response
     }
   }
 
