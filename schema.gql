@@ -49,11 +49,12 @@ type Mutation {
   deleteTask(taskId: String!): Boolean!
   destroyBoard(boardId: String!): Boolean!
   destroySession(sessionId: String!): Boolean!
+  updateBoard(data: BoardInput!): UpdateResult!
 }
 
 type Query {
   featchBoardsBySession(sessionId: String!): [Board!]!
-  fetchBoard(boardId: String!): Board!
+  fetchBoard(boardId: String!): Board
   fetchList(listId: String!): List!
   fetchListsByBoard(boardId: String!): [List!]!
   fetchSession(sessionId: SessionInput!): Session!
@@ -94,4 +95,9 @@ input TasksInput {
   taskIndex: Float!
   title: String!
   updated: DateTime!
+}
+
+"""The UpdateResult model"""
+type UpdateResult {
+  modified: Float!
 }
