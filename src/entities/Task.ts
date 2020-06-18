@@ -13,25 +13,25 @@ export class Task {
 
     @Field()
     @Property()
-    taskIndex: Number
+    taskIndex?: Number
 
     @Field() 
     @Property()
-    listId: String
+    listId?: String
 
-    @Field() 
+    @Field({ nullable: true }) 
     @Property()
-    title: String
+    title?: String
 
-    @Field() 
+    @Field({ nullable: true }) 
     @Property()
-    description: String
+    description?: String
 
-    @Field() 
+    @Field({ nullable: true }) 
     @Property()
-    created: Date
+    created?: Date
 
-    @Field() 
+    @Field({ nullable: true }) 
     @Property()
     updated?: Date
 }

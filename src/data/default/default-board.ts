@@ -7,12 +7,14 @@ const createTask = (title: string, description: string, listId: string, sessionI
 
 export const defaultTasks = (listIds: string[], sessionId: string) =>  [
   createTask('Move Task', 'Click on a Task and move it around.', listIds[0], sessionId, 0),
-  createTask('Move List', 'Click on a List and move it around.', listIds[0], sessionId, 0),
-  createTask('About App front-end', 'This app is created using TypeScript, React and the amazing react-dnd library.', listIds[1], sessionId, 1),
-  createTask('Add Task', 'Try adding a new task to a list.', listIds[2], sessionId, 2),
-  createTask('Add List', 'Try adding a new list to the board.', listIds[2], sessionId, 2),
-  createTask('Delete Task', 'Try to delete a task from a list.', listIds[3], sessionId, 3),
-  createTask('Delete List', 'Try to delete a list from the board.', listIds[3], sessionId, 3)
+  createTask('Move List', 'Click on a List and move it around.', listIds[0], sessionId, 1),
+  createTask('About App front-end', 'UI Created using TypeScript, React, Apollo graphql client and the amazing react-dnd library.', listIds[1], sessionId, 0),
+  createTask('About App front-end', 'API Created using TypeScript, Apollo graphql server, Mongoose and type-graphql.', listIds[1], sessionId, 1),
+  createTask('About App front-end', 'This app is created using TypeScript, React and the amazing react-dnd library.', listIds[1], sessionId, 2),
+  createTask('Add Task', 'Try adding a new task to a list.', listIds[2], sessionId, 0),
+  createTask('Add List', 'Try adding a new list to the board.', listIds[2], sessionId, 1),
+  createTask('Delete Task', 'Try to delete a task from a list.', listIds[3], sessionId, 0),
+  createTask('Delete List', 'Try to delete a list from the board.', listIds[3], sessionId, 1)
 ]
 
 export const defaultLists = (listIds: string[], boardId: string, sessionId: string): List[] => {

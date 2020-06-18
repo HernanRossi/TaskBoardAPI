@@ -7,26 +7,26 @@ export class TasksInput implements Partial<Task> {
   @Field()
   sessionId: string
   
-  @Field()
+  @Field({ nullable: true })
   listId: string
   
   @Field()
   taskId: string
 
-  @Field()
+  @Field({ nullable: true })
   taskIndex: number
 
-  @Field()
+  @Field({ nullable: true })
   @Length(1, 255)
-  title: string
+  title?: string
 
-  @Field()
+  @Field({ nullable: true })
   @Length(1, 255)
-  description: string
+  description?: string
 
-  @Field()
-  updated: Date
+  @Field({ nullable: true })
+  updated?: Date
 
-  @Field()
-  created: Date
+  @Field({ nullable: true })
+  created?: Date
 }

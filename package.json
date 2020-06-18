@@ -13,6 +13,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@nestjs/common": "^7.2.0",
+    "@nestjs/core": "^7.2.0",
+    "@nestjs/graphql": "^7.4.1",
     "@typegoose/typegoose": "^7.2.0",
     "@types/lodash": "^4.14.155",
     "@types/mongoose": "^5.7.24",
@@ -23,6 +26,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "graphql": "^15.1.0",
+    "graphql-tools": "^6.0.10",
     "lodah": "^0.0.1-security",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.19",
@@ -30,6 +34,7 @@
     "nanoid": "^3.1.10",
     "pm2": "^4.4.0",
     "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.5",
     "type-graphql": "^1.0.0-rc.2",
     "winston": "^3.2.1"
   },

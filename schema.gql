@@ -50,6 +50,8 @@ type Mutation {
   destroyBoard(boardId: String!): Boolean!
   destroySession(sessionId: String!): Boolean!
   updateBoard(data: BoardInput!): UpdateResult!
+  updateTaskInfo(data: TasksInput!): UpdateResult!
+  updateTaskLocation(data: UpdateTasks!): UpdateResult!
 }
 
 type Query {
@@ -57,7 +59,7 @@ type Query {
   fetchBoard(boardId: String!): Board
   fetchList(listId: String!): List!
   fetchListsByBoard(boardId: String!): [List!]!
-  fetchSession(sessionId: SessionInput!): Session!
+  fetchSession(sessionId: String!): Session!
   fetchTask(taskId: String!): Task!
   fetchTasksByList(listId: String!): [Task!]!
 }
@@ -70,34 +72,34 @@ type Session {
   sessionId: String!
 }
 
-input SessionInput {
-  sessionId: String!
-}
-
 """The Task model"""
 type Task {
-  created: DateTime!
-  description: String!
+  created: DateTime
+  description: String
   listId: String!
   sessionId: String!
   taskId: String!
   taskIndex: Float!
-  title: String!
-  updated: DateTime!
+  title: String
+  updated: DateTime
 }
 
 input TasksInput {
-  created: DateTime!
-  description: String!
-  listId: String!
+  created: DateTime
+  description: String
+  listId: String
   sessionId: String!
   taskId: String!
-  taskIndex: Float!
-  title: String!
-  updated: DateTime!
+  taskIndex: Float
+  title: String
+  updated: DateTime
 }
 
 """The UpdateResult model"""
 type UpdateResult {
   modified: Float!
+}
+
+input UpdateTasks {
+  tasks: [TasksInput!]!
 }

@@ -2,13 +2,13 @@ import { Resolver, Mutation, Arg, Query } from "type-graphql"
 import _ from 'lodash'
 import { defaultBoard } from '../data/default/default-board'
 import { TasksModel, ListsModel, BoardModel, Session } from "../entities"
-import { SessionInput } from "./types/session-input"
+// import { SessionInput } from "./types/session-input"
 import {createSession} from '../utils/createSession'
 
 @Resolver()
 export class SessionResolver {
   @Query(_returns => Session, { nullable: false })
-  async fetchSession(@Arg("sessionId") { sessionId }: SessionInput) {
+  async fetchSession(@Arg("sessionId") sessionId : string) {
     const board = await BoardModel.findOne({ sessionId })
     if (!board) return {
       sessionId,
